@@ -1,7 +1,7 @@
 class Cat < ApplicationRecord
 
   def metric_wt
-    met_wt = weight * 0.45
+    met_wt = (weight || 0) * 0.45  # always account for a nil class in your calculations
     return met_wt
   end 
 

@@ -17,7 +17,7 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
       post "/cats.json", params: { 
         name: "test product", 
         color: "blue", 
-        weigth: 3,  
+        weight: 10,  
         price: 10,
          }
     end
@@ -42,8 +42,8 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
   end
   
   test "update" do
-    photo = Photo.first
-    patch "/photos/#{photo.id}.json", params: { name: "Updated name" }
+    cat = Cat.first
+    patch "/cats/#{cat.id}.json", params: { name: "Updated name" }
     assert_response 200
   
     data = JSON.parse(response.body)
@@ -51,8 +51,8 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
   end
   
   test "destroy" do
-    assert_difference "Photo.count", -1 do
-      delete "/photos/#{Photo.first.id}.json"
+    assert_difference "Cat.count", -1 do
+      delete "/cats/#{Cat.first.id}.json"
       assert_response 200
     end
   end
