@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+Cat.create(name: "Grayson", color: "tortoise", weight: 10, price: 20)
+Cat.create(name: "Gotham", color: "black", weight: 9, price: 40)
+Cat.create(name: "Joker", color: "grey", weight: 16, price: 56)
