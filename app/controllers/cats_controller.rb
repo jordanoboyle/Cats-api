@@ -9,4 +9,9 @@ class CatsController < ApplicationController
     )
     render template: "cats/show"
   end
+
+  def index
+    @cats = Cat.all 
+    render template: "cats/index"
+  end
 end
