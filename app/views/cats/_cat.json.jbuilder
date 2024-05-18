@@ -8,5 +8,6 @@ json.weight cat.weight
 json.metric_wt cat.metric_wt
 json.price cat.price
 json.tax cat.tax
+json.total_price cat.total_price
 json.created_at cat.created_at
 json.updated_at cat.updated_at

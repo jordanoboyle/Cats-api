@@ -10,4 +10,9 @@ class Cat < ApplicationRecord
     tax_total = price * tax_rate
     return tax_total
   end
+
+  def total_price
+    total = price + tax
+    return total
+  end
 end

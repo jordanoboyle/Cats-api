@@ -5,25 +5,40 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
   test "index" do
-    get "/products.json"
+    get "/cats.json"
     assert_response 200
   
     data = JSON.parse(response.body)
-    assert_equal Product.count, data.length
+    assert_equal Cat.count, data.length
   end
   
   test "create" do
-    assert_difference "Product.count", 1 do
-      post "/products.json", params: { name: "test product", price: 1, image_url: "image.jpg", description: "test description"  }
+    assert_difference "Cat.count", 1 do
+      post "/cats.json", params: { 
+        name: "test product", 
+        color: "blue", 
+        weigth: 3,  
+        price: 10,
+         }
     end
   end
   
   test "show" do
-    get "/products/#{Product.first.id}.json"
+    get "/cats/#{Cat.first.id}.json"
     assert_response 200
   
     data = JSON.parse(response.body)
-    assert_equal ["id", "name", "price", "image_url", "description", "created_at", "updated_at"], data.keys
+    assert_equal [
+    "id", 
+    "name", 
+    "color", 
+    "weight", 
+    "metric_wt", 
+    "price", 
+    "tax", 
+    "total_price", 
+    "created_at", 
+    "updated_at"], data.keys
   end
   
   test "update" do
