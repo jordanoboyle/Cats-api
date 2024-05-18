@@ -21,12 +21,19 @@ class CatsController < ApplicationController
   end
 
   def update
-    @cat = Cat.update(
+    @cat = Cat.find_by(id: params[:id])
+    @cat.update(
       name: params[:name] || @cat.name,
       color: params[:color] || @cat.color,
       weight: params[:weight] || @cat.weight,
       price: params[:price] || @cat.price,
     )
+    render template: "cats/show"
+  end
+
+  def destroy
+    @cat = Cat.find_by(id: params[:id])
+    @cat.destroy
     render template: "cats/show"
   end
 end

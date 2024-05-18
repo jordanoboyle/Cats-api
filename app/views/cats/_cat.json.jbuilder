@@ -5,6 +5,7 @@ json.id cat.id
 json.name cat.name
 json.color cat.color
 json.weight cat.weight
+json.met_wt cat.met_wt
 json.price cat.price
 json.created_at cat.created_at
 json.updated_at cat.updated_at
